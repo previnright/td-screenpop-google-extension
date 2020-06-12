@@ -1,0 +1,26 @@
+{
+	"name": "Talkdesk Screenpop",
+	"version": "1.0",
+	"description": "Autopop a webpage for a Talkdesk agent.",
+	"permissions": ["activeTab", "declarativeContent", "storage", "tabs", "serial"],
+	"background": {
+		"scripts": ["jquery.min.js", "socket.io.js", "background.js"], 
+		"persistent": true
+    },
+    "browser_action": {
+    	"default_popup": "popup.html",
+    	"default_title": "Talkdesk Screepop"
+    },
+    "permissions": [
+        "tabs",
+        "http://*/*",
+        "https://*/*"
+    ],
+    "icons": {
+      "16": "td-icon.png",
+      "32": "td-icon (1).png",
+      "48": "td-icon (2).png",
+      "128": "td-icon (3).png"
+    },
+	"manifest_version": 2
+}

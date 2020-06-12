@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Chat Room</title>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.2.0/socket.io.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+$(document).ready(function() {
+	var socket = io.connect('https://td-screenpop.herokuapp.com/');
+	socket.on('message', function(msg) {
+		$("#messages").append('<li>'+msg+'</li>');
+		//console.log('Received message');
+		// console.log(msg);
+		var s = JSON.parse(msg);
+		console.log(s);
+		var link = s.url;
+		console.log(link);
+
+		// var jsonObj = JSON.parse(msg);
+		// console.log(jsonObj.url);
+	});
+});
+</script>
+</body>
+</html>
